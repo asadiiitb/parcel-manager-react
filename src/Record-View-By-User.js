@@ -19,7 +19,7 @@ function Record_View() {
                             </div>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Date"/>
+                                <input type="text" name="name" id="name" placeholder="Date"/> {/* Date format me present */}
                             </div>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
