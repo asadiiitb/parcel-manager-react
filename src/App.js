@@ -5,6 +5,8 @@ import First from "./Home"
 import Record_Change from "./Record-Change-By-Admin"
 import Record_View from "./Record-View-By-User"
 import Signupadmin from "./Sign-up-Admin"
+import Error from "./Error"
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  localStorage.login="true"
+  localStorage.login="false"
   return (
     <div className="App">
         <Router>
@@ -61,11 +63,13 @@ function App() {
           <Route path="/record-view" component={Record_View}/>
           <Route path="/record-change" component={Record_Change}/>
           <Route path="/signup" component={Signupadmin}/>
+          <Route path="/error" component={Error}/>
 
         </Switch>
       </div>
     </Router>
-            
+      
+      {/*<Error/> */}
       { /*<Admin_Signin/>*/ }
       
       { /* <First/>  */ }

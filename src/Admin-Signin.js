@@ -1,6 +1,7 @@
 import {React,Fragment} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
+import Signupadmin from "./Sign-up-Admin"
 import "./css/style.css"
 
 function Admin_Signin() {
@@ -12,7 +13,7 @@ function Admin_Signin() {
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src={sign_in} alt="sing up image"/></figure>
-                        <a href="#" class="signup-image-link">Create a New Admin</a>{/* Link to SIgn-up Admin*/}
+                        <a href="/signup" class="signup-image-link">Create a New Admin</a>{/* Link to SIgn-up Admin*/}
                     </div>
 
                     <div class="signin-form">
