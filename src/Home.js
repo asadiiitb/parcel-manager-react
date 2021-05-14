@@ -1,6 +1,7 @@
 import {React,Fragment} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
+import Admin_Signin from "./Admin-Signin"
 import "./css/style.css"
 
 function First() {
@@ -12,7 +13,7 @@ function First() {
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src={sign_in} alt="sing up image"/></figure>
-                        <a href="#" class="signup-image-link">Admin login</a>
+                        <a href="/signin" class="signup-image-link">Admin-Login</a>
                     </div>
 
                     <div class="signin-form">
@@ -24,6 +25,7 @@ function First() {
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Find Parcel Details"/>
+                            {/* FInd parcel details and got to '/record-view'  url with data */}
                             </div>
                         </form>
                         <div class="social-login">

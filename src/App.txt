@@ -1,25 +1,54 @@
 import logo from './logo.svg';
 import './App.css';
-import Admin_Signin from "./Admin-Signin"
-import First from "./Home"
+import Welcome from "./Welcome"
+import First from "./home"
 import Record_Change from "./Record-Change-By-Admin"
 import Record_View from "./Record-View-By-User"
 import Signupadmin from "./Sign-up-Admin"
+/*import Display_data_in_table from "./Display-Data-In-Table-To-Admin"*/
+import React from "react"
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';s
 
 function App() {
-  localStorage.login="true"
+
+  localStorage.setItem("login","false")
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+
   return (
     <div className="App">
-        <Router>
+      <Router>
         <div>
+          {/*<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul>
+              <li>
+                <Link to="/">Sign in</Link>
+              </li>
+              <li>
+                <Link to="/about">Sign up</Link>
+              </li>
+              <li>
+                <Link to="/users">Parcel Manager</Link>
+              </li>
+              <li>
+                <Link to="/users">Update</Link>
+              </li>
+              <li>
+                <Link to="/users">View</Link>
+              </li>
+              <li>
+                <Link to="/users">Admin Sign up</Link>
+              </li>
+            </ul>
+          </nav>*/}
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
            <a className="navbar-brand" href="/">Navbar</a>
            {/*<a className="mx-1" href="#">Navbar</a>
@@ -30,7 +59,7 @@ function App() {
               <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav ml-auto">
                 <li className='nav-item'><Link to={'/'} className="nav-link"> Home </Link></li>
-                <li className='nav-item'><Link to={'/signin'} className="nav-link">Admin-Signin</Link></li>
+                <li className='nav-item'><Link to={'/welcome'} className="nav-link">Welcome</Link></li>
                 <li className='nav-item'><Link to={'/about'} className="nav-link">About</Link></li>
                 <li className='nav-item'><Link to={'/myprofile'} className="nav-link">Myprofile</Link></li>
                 <li className='nav-item'><Link to={'/newsFeed'} className="nav-link">NewsFeed</Link></li>
@@ -49,37 +78,42 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          { /*<Route path="/about">
-            
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/users">
             <Users />
           </Route>
-          */}
-          <Route exact path="/" component={First}/> {/* First path of Home */}
-          <Route path="/signin" component={Admin_Signin}/>
-          <Route path="/record-view" component={Record_View}/>
-          <Route path="/record-change" component={Record_Change}/>
-          <Route path="/signup" component={Signupadmin}/>
-
+          <Route exact path="/" component={First}/>
+          <Route path="/welcome" component={Welcome}/>
+          <Route path="/Record_View" component={Record_View}/>
         </Switch>
       </div>
     </Router>
             
-      { /*<Admin_Signin/>*/ }
-      
-      { /* <First/>  */ }
-      
-      { /*<Record_Change/>*/ }
-      
-      { /*<Record_View/> */}
-      {/* <Signupadmin/> */}
-      
-      {/**/}
-      {/**/}
+      {/*<Welcome/>
+      <First/>
+      <Record_Change/>
+      <Record_View/>
+      <Signupadmin/>*/}
+      {/*<Display_data_in_table/>*/}
        
     </div>
   );
 }
+
+/*function Home() {
+  return <h2>Home</h2>;
+}
+*/
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
+
+
 
 export default App;

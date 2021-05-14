@@ -1,6 +1,7 @@
 import {React,Fragment} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
+import First from "./Home"
 import "./css/style.css"
 
 function Record_View() {
@@ -48,6 +49,7 @@ function Record_View() {
                             
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Check Another Record"/>
+                            {/* Link to Home here */}
                             </div>
                         </form>
                     </div>

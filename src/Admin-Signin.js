@@ -3,7 +3,7 @@ import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import "./css/style.css"
 
-function Welcome() {
+function Admin_Signin() {
   return (
     		<Fragment>
 
@@ -32,6 +32,7 @@ function Welcome() {
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                            {/* IF login success ful go to Admin Options else show alert */}
                             </div>
                         </form>
                         <div class="social-login">
@@ -51,4 +52,4 @@ function Welcome() {
     	)
 }
 
-export default Welcome;
+export default Admin_Signin;

@@ -1,6 +1,7 @@
 import {React,Fragment} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
+import Admin_Signin from "./Admin-Signin"
 import "./css/style.css"
 
 function Record_Change() {
@@ -53,7 +54,8 @@ function Record_Change() {
                     </div>
                     <div class="signup-image">
                         <figure><img src={sign_up} alt="sing up image"/></figure>
-                        <a href="#" class="signup-image-link">Sign in from another Account</a>
+                        <a href={Admin_Signin} class="signup-image-link">Sign in from another Account</a>
+                    {/* ITS not working need to check*/}
                     </div>
                 </div>
             </div>
