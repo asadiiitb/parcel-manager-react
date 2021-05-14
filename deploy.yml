@@ -1,0 +1,16 @@
+---
+- name: Pull and Run docker image of mehakdogra0067/packagemgtfrontend
+  hosts: all
+  tasks:
+    - name: Pull mehakdogra0067/packagemgtfrontend
+      docker_image:
+        name: mehakdogra0067/packagemgtfrontend
+        source: pull
+        
+    # - name: Create default containers
+    #   docker_container:
+    #     name: bidding_app_frontend
+    #     image: shivraj25/bidding_app_frontend
+    #     state: present
+    #     ports:
+    #       - "3000:3000"
