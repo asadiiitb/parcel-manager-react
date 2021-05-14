@@ -6,6 +6,7 @@ import Record_Change from "./Record-Change-By-Admin"
 import Record_View from "./Record-View-By-User"
 import Signupadmin from "./Sign-up-Admin"
 import Error from "./Error"
+import Footer from "./Footer"
 
 import {
   BrowserRouter as Router,
@@ -78,7 +79,7 @@ function App() {
       
       { /*<Record_View/> */}
       {/* <Signupadmin/> */}
-      
+      <Footer/>
       {/**/}
       {/**/}
        
