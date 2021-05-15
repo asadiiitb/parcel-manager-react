@@ -71,7 +71,7 @@ function App() {
         </Switch>
       </div>
     </Router>
-      <ListRecords/> 
+      
       {/*<Error/> */}
       { /*<Admin_Signin/>*/ }
       
