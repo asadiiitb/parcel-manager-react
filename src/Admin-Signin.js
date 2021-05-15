@@ -1,5 +1,7 @@
 import {React,Fragment, Component} from 'react'
 import axios from "axios";
+import Cards from "./Cards";
+import {Link} from 'react-router-dom';
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import Signupadmin from "./Sign-up-Admin"
@@ -62,8 +64,8 @@ class Admin_Signin extends Component {
                         <h2 class="form-title">Admin Sign In</h2>
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"    value={this.state.emailId} onChange={this.EmailHandler}/>
+                                <label for="emailId"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="emailId" id="emailId" placeholder="Your Email-ID"    value={this.state.emailId} onChange={this.EmailHandler}/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>

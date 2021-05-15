@@ -1,5 +1,7 @@
 import {React,Fragment, Component} from 'react'
 import axios from "axios";
+import Cards from "./Cards";
+import {Link} from 'react-router-dom';
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import "./css/style.css"
@@ -14,7 +16,7 @@ class Signupadmin extends Component{
             contactNumber: "",
             username: "",
             emailId:"",
-            password :"",
+            password :""
         }
         this.handleChange = this.handleChange.bind(this)
         this.saveAdmin = this.saveAdmin.bind(this);
