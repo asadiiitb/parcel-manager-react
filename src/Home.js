@@ -6,7 +6,7 @@ import Cards from "./Cards";
 import {Link} from 'react-router-dom';
 import "./css/style.css"
 
-class First() extends Component {
+class First extends Component {
      constructor(props) {
         super(props);
         this.state = {

@@ -1,11 +1,16 @@
-import {React,Fragment} from 'react'
+import {React,Fragment, Component} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import Admin_Signin from "./Admin-Signin"
+import Cards from "./Cards";
+import {Link} from 'react-router-dom';
 import "./css/style.css"
 
-function Record_Change() {
-  return (
+class Record_Change extends Component {
+  
+
+    render(){
+        return (
             <Fragment>
             
             <section class="signup">
@@ -64,7 +69,8 @@ function Record_Change() {
         
        
             </Fragment>
-        )
+        )   
+    }
 }
 
 export default Record_Change
