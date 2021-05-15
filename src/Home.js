@@ -23,7 +23,7 @@ class First extends Component {
                 searchKey: this.state.searchKey
             }
             // https://github.com/asadiiitb/parcel-manager-react/tree/main/{abc}
-            axios.get('http://localhost:8095/record/'+searchkey,parcel)
+            axios.get('http://localhost:8095/record/'+999,parcel)
                 .then(response =>{
                     console.log(response);
                     console.log(response.data);
