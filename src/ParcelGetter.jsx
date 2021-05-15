@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import AdminService from './AdminService';
+import Record_View from './Record-View-By-User';
  
 
 class ListAdmin extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            admins: []
+            parcel: []
         }
     }
     componentDidMount() {
