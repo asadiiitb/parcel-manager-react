@@ -40,7 +40,7 @@ class Admin_Signin extends Component {
                 console.log(response.data);
                 this.props.history.push('/');
                     console.log("login");
-                
+                localStorage.setItem("login","false");
                 alert('login');
             })
             .catch(error =>{

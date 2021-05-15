@@ -17,7 +17,7 @@ class ListAdmin extends Component {
     render() {
         return ( 
         <div >
-            <h2 className = "text-center" > Total Admins < /h2> 
+            <h2 className = "text-center" > Parcel Details < /h2> 
             <div className = "row" >
             <table className = "table table-striped table-bordered" >
             <thead >

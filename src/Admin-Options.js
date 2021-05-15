@@ -29,7 +29,7 @@ class Record_View extends Component {
                             </div>
                             
                             <div class="form-group form-button">
-                                <input name="third" id="third"  href="/third" value="Third Function"/>
+                                <input name="listadmin" id="listadmin"  href="/listadmin" value="List Admin"/>
                             </div>
                     </div>
                     <div class="signup-image">
