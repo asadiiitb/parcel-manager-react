@@ -9,6 +9,7 @@ import Error from "./Error"
 import Footer from "./Footer"
 import ListAdmin from "./ListAdmin"
 import ListRecords from "./ListRecords"
+import About from "./AboutUs"
 
 import {
   BrowserRouter as Router,
@@ -85,6 +86,7 @@ function App() {
           <Route path="/error" component={Error}/>
           <Route path="/records" component={ListRecords}/>
           <Route path="/listadmin" component={ListAdmin}/>
+          <Route path="/about" component={About}/>
 
         </Switch>
       </div>
