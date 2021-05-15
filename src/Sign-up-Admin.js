@@ -1,6 +1,5 @@
 import {React,Fragment, Component} from 'react'
 import axios from "axios";
-import Cards from "./Cards";
 import {Link} from 'react-router-dom';
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
@@ -11,13 +10,14 @@ class Signupadmin extends Component{
         super(props);
 
         this.state = {
-            firstName: "",
-            lastName: "",
+            firstname: "",
+            lastname: "",
             contactNumber: "",
             username: "",
-            emailId:"",
+            email:"",
             password :""
         }
+
         this.handleChange = this.handleChange.bind(this)
         this.saveAdmin = this.saveAdmin.bind(this);
     }
@@ -32,25 +32,28 @@ class Signupadmin extends Component{
     saveAdmin= (event) =>{
         event.preventDefault();
         let customer = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
             contactNumber: this.state.contactNumber,
             username: this.state.username,
-            emailId: this.state.emailId,
+            email: this.state.email,
             password : this.state.password,
         }
-        axios.post('http://localhost:8082/api/createCustomer',customer)
+
+
+        axios.post('http://localhost:8095/register',customer)
             .then(response =>{
                 console.log(response);
                 console.log(response.data);
                 {this.props.history.push('/');
                     console.log("Account Created");
                 }
+                alert('Account Created ');
             })
             .catch(error =>{
                 console.log(error)
             })
-        alert('Account Created ');
+        
     }
 
 
@@ -74,8 +77,8 @@ class Signupadmin extends Component{
                                 <input type="text" name="lastname" id="lastname" placeholder="Your Last Name" value={this.state.lastname} onChange={this.handleChange}/>
                             </div>
                             <div class="form-group">
-                                <label for="emailId"><i class="zmdi zmdi-email"></i></label>
-                                <input type="emailId" name="emailId" id="emailId" placeholder="Your Email" value={this.state.emailId} onChange={this.handleChange}/>
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" value={this.state.email} onChange={this.handleChange}/>
                             </div>
                             <div class="form-group">
                                 <label for="password"><i class="zmdi zmdi-lock"></i></label>
@@ -83,7 +86,7 @@ class Signupadmin extends Component{
                             </div>
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="useername" placeholder="UserName" value={this.state.username} onChange={this.handleChange}/>
+                                <input type="text" name="username" id="username" placeholder="UserName" value={this.state.username} onChange={this.handleChange}/>
                             </div>
 
                             <div class="form-group">

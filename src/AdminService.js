@@ -1,8 +1,13 @@
 import axios from "axios";
-const Admin_API = "http://localhost:8095/showadmins";
+const Admin_API = "http://localhost:8095";
 class AdminService {
     getAdmins() {
-        return axios.get(Admin_API);
+    	console.log();
+        return axios.get(Admin_API.concat("/showadmins"));
+    }
+    viewRecords() {
+    	console.log();
+        return axios.get(Admin_API.concat("/viewrecords"));
     }
 }
 export default new AdminService();

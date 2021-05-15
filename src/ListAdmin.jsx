@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AdminService from './AdminService';
- 
+
 
 class ListAdmin extends Component {
     constructor(props) {
@@ -33,10 +33,10 @@ class ListAdmin extends Component {
                 this.state.admins.map(
                     admin =>
                     <tr key = { admin.id } >
-                    <td > { admin.firstName } < /td> 
-                    <td > { admin.lastName } < /td> 
+                    <td > { admin.firstname } < /td> 
+                    <td > { admin.lastname } < /td> 
                     <td > { admin.email } < /td> 
-                    <td > { admin.userName } < /td>
+                    <td > { admin.username } < /td>
 
                     </tr>
                 )

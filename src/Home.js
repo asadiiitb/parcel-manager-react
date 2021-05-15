@@ -2,8 +2,9 @@ import {React,Fragment, Component} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import Admin_Signin from "./Admin-Signin"
-import Cards from "./Cards";
 import {Link} from 'react-router-dom';
+import ListRecords from "./ListRecords"
+import axios from "axios";
 import "./css/style.css"
 
 class First extends Component {
@@ -12,29 +13,34 @@ class First extends Component {
         this.state = {
             searchKey: "",
         }
-        this.SearchKey=this.SearchKey.bind(this)
-    }    
+        this.SearchHandler=this.SearchHandler.bind(this)
+        }    
         SearchHandler= (event) => {
-            this.setState({searchkey: event.target.value});
+            this.setState({searchKey: event.target.value});
+            sessionStorage.setItem("track","999");
         }
-    handleClick= (event) =>{
-        event.preventDefault();
-        let parcel = {
-            searchkey: this.state.searchkey
+        handleClick= (event) =>{
+            event.preventDefault();
+            let track=sessionStorage.getItem("track");
+            let parcel = {
+
+                searchKey: this.state.searchKey
+            }
+            // https://github.com/asadiiitb/parcel-manager-react/tree/main/{abc}
+            axios.get('http://localhost:8095/record/'+track)
+                .then(response =>{
+                    console.log(response);
+                    console.log(response.data);
+                    {this.props.history.push('/ListRecords');
+                        console.log("found");
+                        alert('found');
+                    }
+                })
+                .catch(error =>{
+                    console.log(error)
+                })
+            
         }
-        axios.post('http://localhost:8082/api/customer/login',parcel)
-            .then(response =>{
-                console.log(response);
-                console.log(response.data);
-                {this.props.history.push('/');
-                    console.log("found");
-                }
-            })
-            .catch(error =>{
-                console.log(error)
-            })
-        alert('found');
-    }
     render(){
         return (
     		<Fragment>
@@ -51,11 +57,11 @@ class First extends Component {
                         <h2 class="form-title">Welcome To Parcel Manager </h2>
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
-                                <label for="SearchKey"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="searchkey" id="searchkey" placeholder="Enter ID to check" value={this.state.searchkey} onChange={this.SearchHandler} />
+                                <label for="searchKey"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="searchKey" id="searchKey" placeholder="Enter ID to check" value={this.state.searchKey} onChange={this.SearchHandler} />
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Find Parcel Details" onClick={this.handleClick}/>
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Find Parcel Details" onClick={this.SearchHandler}/>
                             {/* FInd parcel details and got to '/record-view'  url with data */}
                             </div>
                         </form>

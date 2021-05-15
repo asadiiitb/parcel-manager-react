@@ -2,32 +2,12 @@ import {React,Fragment, Component} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import First from "./Home"
-import Cards from "./Cards";
 import {Link} from 'react-router-dom';
 import "./css/style.css"
 
-
-
-const Parcel_API = "http://localhost:8095/showadmins";
 class Record_View extends Component {
     
-    constructor(props) {
-        super(props)
-        this.state = {
-            parcel: []
-        }
-    }
-    
-    getParcel() {
-        return axios.get(Parcel_API);
-    }
 
-
-    componentDidMount() {
-            getParcel().then((res)=>{
-                this.setState({parcel: res.data});
-            });
-    }
 
     render(){
         return (
@@ -86,39 +66,7 @@ class Record_View extends Component {
             </div>
         </section>
 
-            <div >
-            <h2 className = "text-center" > Parcel Details < /h2> 
-            <div className = "row" >
-            <table className = "table table-striped table-bordered" >
-            <thead >
-            <tr >
-            <th > Item No</th> 
-            <th > Name < /th> 
-            <th > Company Name < /th> 
-            <th > Status < /th> 
-            <th > Remark < /th> 
-            <th > Number < /th> 
-            <th > Date < /th> 
-            </tr> 
-            </thead> 
-            <tbody > {
-                this.state.parcel.map(
-                    parcel =>
-                    <tr key = { parcel.item_no} >
-                    <td > { parcel.name } < /td> 
-                    <td > { parcel.compName } < /td> 
-                    <td > { parcel.status } < /td> 
-                    <td > { parcel.remark } < /td> 
-                    <td > { parcel.number } < /td> 
-                    <td > { parcel.date } < /td>
-
-                    </tr>
-                )
-            } 
-            </tbody> 
-            </table> 
-            </div> 
-            </div>
+        
        
             </Fragment>
         )
