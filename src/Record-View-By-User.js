@@ -1,11 +1,16 @@
-import {React,Fragment} from 'react'
+import {React,Fragment, Component} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import First from "./Home"
+import {Link} from 'react-router-dom';
 import "./css/style.css"
 
-function Record_View() {
-  return (
+class Record_View extends Component {
+    
+
+
+    render(){
+        return (
             <Fragment>
             
             <section class="signup">
@@ -15,36 +20,36 @@ function Record_View() {
                         <h2 class="form-title">View Record for ID variable / name</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Item Number"/>
+                                <label for="ItemNumber"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="itemNumber" id="itemNumber" placeholder="Item Number"/>
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Date"/> {/* Date format me present */}
+                                <label for="date"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="date" id="date" placeholder="Date"/> {/* Date format me present */}
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Tracking ID"/>
+                                <label for="trackId"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="trackId" id="trackId" placeholder="Tracking ID"/>
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="User Name"/>
+                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="User Name"/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Company Name"/>
+                                <label for="company"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" name="company" id="company" placeholder="Company Name"/>
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Comments"/>
+                                <label for="comments"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="comments" id="comments" placeholder="Comments"/>
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Status"/>
+                                <label for="status"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="status" id="status" placeholder="Status"/>
                             </div>
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Phone Number"/>
+                                <label for="contact"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="contact" id="contact" placeholder="Phone Number"/>
                             </div>
                             
                             <div class="form-group form-button">
@@ -65,6 +70,7 @@ function Record_View() {
        
             </Fragment>
         )
+    }
 }
 
 export default Record_View

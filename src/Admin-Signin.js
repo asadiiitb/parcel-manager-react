@@ -1,5 +1,6 @@
 import {React,Fragment, Component} from 'react'
 import axios from "axios";
+import {Link} from 'react-router-dom';
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import Signupadmin from "./Sign-up-Admin"
@@ -11,17 +12,17 @@ class Admin_Signin extends Component {
         constructor(props) {
         super(props);
         this.state = {
-            emailId: "",
+            username: "",
             password: "",
             errorMessage : false
         }
-        this.EmailHandler=this.EmailHandler.bind(this)
+        this.UserHandler=this.UserHandler.bind(this)
         this.PasswordHandler=this.PasswordHandler.bind(this)
         this.handleClick= this.handleClick.bind(this)
     }
 
-    EmailHandler= (event) => {
-        this.setState({emailId: event.target.value});
+    UserHandler= (event) => {
+        this.setState({username: event.target.value});
     }
     PasswordHandler= (event) => {
         this.setState({password: event.target.value});
@@ -29,21 +30,23 @@ class Admin_Signin extends Component {
     handleClick= (event) =>{
         event.preventDefault();
         let customer = {
-            emailId: this.state.emailId,
+            username: this.state.username,
             password: this.state.password
         }
-        axios.post('http://localhost:8082/api/customer/login',customer)
+        console.log(customer);
+        axios.post('http://localhost:8095/login',customer)
             .then(response =>{
                 console.log(response);
                 console.log(response.data);
-                {this.props.history.push('/');
+                this.props.history.push('/');
                     console.log("login");
-                }
+                
+                alert('login');
             })
             .catch(error =>{
                 console.log(error)
             })
-        alert('login');
+        
     }
 
     render(){
@@ -62,8 +65,8 @@ class Admin_Signin extends Component {
                         <h2 class="form-title">Admin Sign In</h2>
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Your Name"    value={this.state.emailId} onChange={this.EmailHandler}/>
+                                <label for="UserName"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="Your UserName"    value={this.state.username} onChange={this.UserHandler}/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>

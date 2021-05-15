@@ -1,11 +1,43 @@
-import {React,Fragment} from 'react'
+import {React,Fragment, Component} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import Admin_Signin from "./Admin-Signin"
+import {Link} from 'react-router-dom';
+import axios from "axios";
 import "./css/style.css"
 
-function First() {
-  return (
+class First extends Component {
+     constructor(props) {
+        super(props);
+        this.state = {
+            searchKey: "",
+        }
+        this.SearchHandler=this.SearchHandler.bind(this)
+        }    
+        SearchHandler= (event) => {
+            this.setState({searchKey: event.target.value});
+        }
+        handleClick= (event) =>{
+            event.preventDefault();
+            let parcel = {
+                searchKey: this.state.searchKey
+            }
+            // https://github.com/asadiiitb/parcel-manager-react/tree/main/{abc}
+            axios.get('http://localhost:8095/record/'+searchkey,parcel)
+                .then(response =>{
+                    console.log(response);
+                    console.log(response.data);
+                    {this.props.history.push('/');
+                        console.log("found");
+                    }
+                })
+                .catch(error =>{
+                    console.log(error)
+                })
+            alert('found');
+        }
+    render(){
+        return (
     		<Fragment>
 
     		<section class="sign-in">
@@ -20,11 +52,11 @@ function First() {
                         <h2 class="form-title">Welcome To Parcel Manager </h2>
                         <form method="POST" class="register-form" id="login-form">
                             <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="your_name" id="your_name" placeholder="Enter ID to check"/>
+                                <label for="searchKey"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="searchkey" id="searchkey" placeholder="Enter ID to check" value={this.state.searchKey} onChange={this.SearchHandler} />
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Find Parcel Details"/>
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Find Parcel Details" onClick={this.SearchHandler}/>
                             {/* FInd parcel details and got to '/record-view'  url with data */}
                             </div>
                         </form>
@@ -43,6 +75,8 @@ function First() {
     		
        	</Fragment>
     	)
+
+    }
 }
 
 export default First;
