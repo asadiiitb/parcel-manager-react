@@ -1,7 +1,7 @@
 import {React,Fragment, Component} from 'react'
 import mehak from "./images/mehak.jpg"
 import Asad from "./images/Asad.jpg"
-import First from "./Home"\
+import First from "./Home"
 import {Link} from 'react-router-dom';
 import "./css/style.css"
 
@@ -20,7 +20,7 @@ class Record_View extends Component {
                         <h2 class="form-title">Mehak Dogra</h2>
                             
                             <div class="form-group form-button">
-                                THis is Intro section for MEhak Dogra
+                                HEllo, its Mehak Dogra, a student of IIITB. I am a Software Engineer and love to work with new technologies. This product was developed in order to learn React with SpringBoor. This website is prepared in order to handle the mishandling of Products which the students order or receive in the company's premises.
                             </div>
                     </div>
                     <div class="signup-image">

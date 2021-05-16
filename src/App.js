@@ -10,6 +10,8 @@ import Footer from "./Footer"
 import ListAdmin from "./ListAdmin"
 import ListRecords from "./ListRecords"
 import About from "./AboutUs"
+import recordPage from "./recordPage"
+import AddRecords from "./Add-Records"
 import admin_options from "./Admin-Options" 
 
 import {
@@ -22,7 +24,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  localStorage.login="false"
+  localStorage.login="false";
+  localStorage.searchingKeylocal="";
   return (
     <div className="App">
         <Router>
@@ -61,6 +64,20 @@ function App() {
                   :
                   null
                 }
+                 {
+                  localStorage.login == 'true'
+                  ?
+                  <li className='nav-item'><Link to={'/Add-Records'} className="nav-link">AddRecords</Link></li>
+                  :
+                  null
+                }
+                {
+                  localStorage.login == 'true'
+                  ?
+                  <li className='nav-item'><Link to={'/recordPage'} className="nav-link">recordPage</Link></li>
+                  :
+                  null
+                }
 
 
                 
@@ -89,6 +106,9 @@ function App() {
           <Route path="/listadmin" component={ListAdmin}/>
           <Route path="/about" component={About}/>
           <Route path="/admin-options" component={admin_options}/>
+          <Route path="/Add-Records" component={AddRecords}/>
+          <Route path="/recordPage" component={recordPage}/>
+          
 
         </Switch>
       </div>

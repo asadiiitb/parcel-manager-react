@@ -2,7 +2,6 @@ import {React,Fragment, Component} from 'react'
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import First from "./Home"
-import Cards from "./Cards";
 import {Link} from 'react-router-dom';
 import "./css/style.css"
 
@@ -33,12 +32,12 @@ class admin_options extends Component {
 
                             <div class="form-group form-button">
                                 <input type="submit" name="records" id="records"  href="/records" value="Search Around Get Records"/>
-                                <Link to="/records" className="btn btn-primary">Search Around Get Records</Link>
+                                <Link to="/records" className="btn btn-primary">view all records</Link>
                             </div>
                             
                             <div class="form-group form-button">
-                                <input type="add-record" name="" id="addrecord"  href="/add-record" value="Wanna add new Record "/>
-                                <Link to="/add-record" className="btn btn-primary">Wanna add new Record</Link>
+                                <input type="AddRecords" name="AddRecords" id="AddRecords"  href="/Add-Records" value="Wanna add new Record "/>
+                                <Link to="/Add-Records" className="btn btn-primary">Add another record</Link>
                             </div>
                     </div>
                     <div class="signup-image">

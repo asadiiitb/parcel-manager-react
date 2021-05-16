@@ -7,6 +7,24 @@ import "./css/style.css"
 
 class Record_View extends Component {
     
+     constructor(props) {
+        super(props);
+
+        axios.get('http://localhost:8095/record/'.concat(localStorage.searchingKeylocal))
+                .then(response =>{
+                    console.log(response);
+                    console.log(response.data);
+                    {this.props.history.push('/record-view');
+                        console.log("found");
+                        alert('found');
+                    }
+                })
+                .catch(error =>{
+                    console.log(error)
+                })
+            
+
+    }    
 
 
     render(){
@@ -17,7 +35,7 @@ class Record_View extends Component {
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">View Record for ID variable / name</h2>
+                        <h2 class="form-title">Here are the details of the track id you are looking for... / name</h2>
                         <form method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="ItemNumber"><i class="zmdi zmdi-account material-icons-name"></i></label>

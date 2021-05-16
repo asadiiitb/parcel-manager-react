@@ -5,7 +5,7 @@ import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import "./css/style.css"
 
-class Signupadmin extends Component{
+class AddRecords extends Component{
       constructor(props) {
         super(props);
 
@@ -32,8 +32,7 @@ class Signupadmin extends Component{
     }
     saveRecord= (event) =>{
         event.preventDefault();
-        let customer = {
-            item_no: this.state.item_no,
+        let record = {
             trackId: this.state.trackId,
             name: this.state.name,
             compName: this.state.compName,
@@ -43,14 +42,15 @@ class Signupadmin extends Component{
             date: this.state.date,
     }
 
+
+
         {/* Add Api for Record addition */}
-        axios.post('http://localhost:8095/register',customer)
+        axios.post('http://localhost:8095/addrecord',record)
             .then(response =>{
                 console.log(response);
                 console.log(response.data);
                 {this.props.history.push('/record-view'); {/* Add URL to record View*/}
                     console.log("Record Added");
-                }
                 }
                 alert('Record Added');
             })
@@ -77,10 +77,7 @@ class Signupadmin extends Component{
                     <div class="signin-form">
                         <h2 class="form-title">Add Record to Parcel Manager </h2>
                         <form method="POST" class="register-form" id="register-form" onSubmit={this.handleSubmit}>
-                            <div class="form-group">
-                                <label for="item_no"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="item_no" id="item_no" placeholder="Item Number" value={this.state.item_no} onChange={this.handleChange}/>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="trackId"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="trackId" id="trackId" placeholder="Track ID" value={this.state.trackId} onChange={this.handleChange}/>
@@ -111,12 +108,9 @@ class Signupadmin extends Component{
                                 <label for="date"><i class="zmdi zmdi-email"></i></label>
                                 <input type="text" name="date" id="date" placeholder="date" value={this.state.date} onChange={this.handleChange}/>
                             </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
-                            </div>
+                             
                             <div class="form-group form-button">
-                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"  onClick={this.saveRecord}/>
+                                <input type="submit" name="AddRecords" id="AddRecords" class="form-submit" value="Register"  onClick={this.saveRecord}/>
                             </div>
                         </form>
                         {/*<div class="social-login">
@@ -140,7 +134,7 @@ class Signupadmin extends Component{
     }
 }
 
-export default Signupadmin;
+export default AddRecords;
 
 
 

@@ -9,5 +9,9 @@ class AdminService {
     	console.log();
         return axios.get(Admin_API.concat("/viewrecords"));
     }
+    showrec(id) {
+    	console.log();
+        return axios.get(Admin_API.concat("/record"),{id});
+    }
 }
 export default new AdminService();
