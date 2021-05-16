@@ -8,7 +8,7 @@ import "./css/style.css"
 
 
 
-class Record_View extends Component {
+class admin_options extends Component {
 
     render(){
         return (
@@ -21,21 +21,36 @@ class Record_View extends Component {
                         <h2 class="form-title">View Record for ID variable / name</h2>
                             
                             <div class="form-group form-button">
-                                <input name="signup" id="signup"  href="/signup" value="New Admin Signup"/>
+                                <input type="submit" name="signup" id="signup"  href="/signup" value="New Admin Signup"/>
+                                <Link to="/signup" className="btn btn-primary">Sign up</Link>
+                            </div>
+                            
+
+                            <div class="form-group form-button">
+                                <input type="submit" name="listadmin" id="listadmin"  href="/listadmin" value="List Admin"/>
+                                <Link to="/listadmin" className="btn btn-primary">List Admin</Link>
+                            </div>
+
+                            <div class="form-group form-button">
+                                <input type="submit" name="records" id="records"  href="/records" value="Search Around Get Records"/>
+                                <Link to="/records" className="btn btn-primary">Search Around Get Records</Link>
                             </div>
                             
                             <div class="form-group form-button">
-                                <input name="records" id="records"  href="/records" value="Search Around Get Records"/>
-                            </div>
-                            
-                            <div class="form-group form-button">
-                                <input name="listadmin" id="listadmin"  href="/listadmin" value="List Admin"/>
+                                <input type="add-record" name="" id="addrecord"  href="/add-record" value="Wanna add new Record "/>
+                                <Link to="/add-record" className="btn btn-primary">Wanna add new Record</Link>
                             </div>
                     </div>
                     <div class="signup-image">
                         <figure><img src={sign_up} alt="sing up image"/></figure>
+                        {
+                            localStorage.login == 'true'
+                        ?
                         <a href="#" class="signup-image-link">Sign in from Admin Account</a>
-                    </div>
+                        :
+                        null
+                        }
+                        </div>
                 </div>
             </div>
         </section>
@@ -46,4 +61,4 @@ class Record_View extends Component {
     }
 }
 
-export default Record_View
+export default admin_options

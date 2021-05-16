@@ -65,7 +65,7 @@ class First extends Component {
                             {/* FInd parcel details and got to '/record-view'  url with data */}
                             </div>
                         </form>
-                        <div class="social-login">
+                        {/*<div class="social-login">
                             <span class="social-label">Or login with</span>
                             <ul class="socials">
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
@@ -73,6 +73,7 @@ class First extends Component {
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                             </ul>
                         </div>
+                    */}
                     </div>
                 </div>
             </div>

@@ -1,10 +1,7 @@
 import {React,Fragment, Component} from 'react'
 import mehak from "./images/mehak.jpg"
 import Asad from "./images/Asad.jpg"
-
-
-import First from "./Home"
-import Cards from "./Cards";
+import First from "./Home"\
 import {Link} from 'react-router-dom';
 import "./css/style.css"
 

@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import sign_up from "./images/signup-image.jpg"
 import sign_in from "./images/signin-image.jpg"
 import Signupadmin from "./Sign-up-Admin"
+import admin_options from "./Admin-Options"
 
 import "./css/style.css"
 
@@ -40,7 +41,8 @@ class Admin_Signin extends Component {
                 console.log(response.data);
                 this.props.history.push('/');
                     console.log("login");
-                localStorage.setItem("login","false");
+                localStorage.setItem("login","true");
+                this.props.history.push('/admin-options')
                 alert('login');
             })
             .catch(error =>{
@@ -81,14 +83,14 @@ class Admin_Signin extends Component {
                             {/* IF login success ful go to Admin Options else show alert */}
                             </div>
                         </form>
-                        <div class="social-login">
+                        {/* <div class="social-login">
                             <span class="social-label">Or login with</span>
                             <ul class="socials">
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

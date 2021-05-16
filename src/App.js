@@ -10,6 +10,7 @@ import Footer from "./Footer"
 import ListAdmin from "./ListAdmin"
 import ListRecords from "./ListRecords"
 import About from "./AboutUs"
+import admin_options from "./Admin-Options" 
 
 import {
   BrowserRouter as Router,
@@ -87,6 +88,7 @@ function App() {
           <Route path="/records" component={ListRecords}/>
           <Route path="/listadmin" component={ListAdmin}/>
           <Route path="/about" component={About}/>
+          <Route path="/admin-options" component={admin_options}/>
 
         </Switch>
       </div>
