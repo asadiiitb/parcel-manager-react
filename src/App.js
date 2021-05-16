@@ -25,6 +25,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   localStorage.login="false"
+  localStorage.searchKeylocal=""
   return (
     <div className="App">
         <Router>

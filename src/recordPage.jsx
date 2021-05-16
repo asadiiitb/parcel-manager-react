@@ -6,11 +6,18 @@ class recordPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            records: []
+            records: [],
+            trackId:{
+        name:localStorage.getItem('searchKeylocal')
+        }           
         }
     }
+
     componentDidMount() {
-            AdminService.showrec().then((res)=>{
+
+            console.log(this.state.trackId.name,"!!!!!");
+            console.log("recordPage");
+            AdminService.showrec(this.state.trackId.name).then((res)=>{
                 this.setState({records: res.data});
             });
     }

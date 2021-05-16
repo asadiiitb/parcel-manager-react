@@ -17,6 +17,10 @@ class First extends Component {
         }    
         SearchHandler= (event) => {
             this.setState({searchKey: event.target.value});
+            // console.log(event.target.value);
+            // console.log("hell");
+            localStorage.setItem("searchKeylocal",event.target.value);
+            console.log(localStorage.searchKeylocal);
             // sessionStorage.setItem("track","999");
         }
         handleClick= (event) =>{
@@ -27,11 +31,16 @@ class First extends Component {
                 searchKey: this.state.searchKey
             }
             // https://github.com/asadiiitb/parcel-manager-react/tree/main/{abc}
-            axios.get('http://localhost:8095/record?id=999')
+            localStorage.setItem("searchKeylocal",parcel.searchKey);
+            console.log(parcel.searchKey);
+            console.log(this.searchKey);
+            console.log(localStorage.searchKeylocal);
+            this.props.history.push('/recordPage');
+            {/*axios.get('http://localhost:8095/record?id=999')
                 .then(response =>{
                     console.log(response);
                     console.log(response.data);
-                    {this.props.history.push('/ListRecords');
+                    {
                         console.log("found");
                         alert('found');
                     }
@@ -39,6 +48,7 @@ class First extends Component {
                 .catch(error =>{
                     console.log(error)
                 })
+            */}
             
         }
     render(){
@@ -61,27 +71,20 @@ class First extends Component {
                                 <input type="text" name="searchKey" id="searchKey" placeholder="Enter ID to check" value={this.state.searchKey} onChange={this.SearchHandler} />
                             </div>
 
-                          // {  <div class="form-group form-button">
-                          //       <input type="submit" name="searchKey" id="searchKey" class="form-submit" value="" onClick={this.SearchHandler}/>
-                          //   {/* FInd parcel details and got to '/record-view'  url with data }
-                          //   </div>*/}
-                          // <div class="form-group form-button">
-                          //       <input type="submit" name="searchKey" id="searchKey"  href="/recordPage" value="Find Parcel Details"/>
-                          //       <Link to="/recordPage" className="btn btn-primary">Record View</Link>
-                          //   </div>
+                             <div class="form-group form-button">
+                                 <input type="submit" name="searchKey" id="searchKey" class="form-submit" value="View Record" onClick={this.SearchHandler}/>
+                           
+                             </div>
+
+
+                           <div class="form-group form-button">
+                                 <Link to="/recordPage" className="btn btn-primary">Record View</Link>
+                             </div>
 
 
 
                         </form>
-                        {/*<div class="social-login">
-                            <span class="social-label">Or login with</span>
-                            <ul class="socials">
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
-                            </ul>
-                        </div>
-                    */}
+                        
                     </div>
                 </div>
             </div>
