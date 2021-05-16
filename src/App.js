@@ -9,6 +9,10 @@ import Error from "./Error"
 import Footer from "./Footer"
 import ListAdmin from "./ListAdmin"
 import ListRecords from "./ListRecords"
+import About from "./AboutUs"
+import recordPage from "./recordPage"
+import AddRecords from "./Add-Records"
+import admin_options from "./Admin-Options" 
 
 import {
   BrowserRouter as Router,
@@ -26,7 +30,7 @@ function App() {
         <Router>
         <div>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-           <a className="navbar-brand" href="/">Navbar</a>
+           <a className="navbar-brand" href="/">Parcel Manager</a>
            {/*<a className="mx-1" href="#">Navbar</a>
            <a className="mx-1" href="#">Navbar</a>*/}
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,16 +41,46 @@ function App() {
                 <li className='nav-item'><Link to={'/'} className="nav-link"> Home </Link></li>
                 <li className='nav-item'><Link to={'/signin'} className="nav-link">Admin-Signin</Link></li>
                 <li className='nav-item'><Link to={'/about'} className="nav-link">About</Link></li>
-                <li className='nav-item'><Link to={'/myprofile'} className="nav-link">Myprofile</Link></li>
-                <li className='nav-item'><Link to={'/newsFeed'} className="nav-link">NewsFeed</Link></li>
 
                 {
                   localStorage.login == 'true'
                   ?
-                  <li className='nav-item'><Link to={'/sendEmail'} className="nav-link">SendEmail</Link></li>
+                  <li className='nav-item'><Link to={'/signup'} className="nav-link">Admin-Signup</Link></li>                  
                   :
-                  <li className='nav-item'><Link to={'/sendEmail'} className="nav-link">SendEmail22222</Link></li>
+                  null
                 }
+                {
+                  localStorage.login == 'true'
+                  ?
+                  <li className='nav-item'><Link to={'/records'} className="nav-link">All-Records</Link></li>
+                  :
+                  null
+                }
+                {
+                  localStorage.login == 'true'
+                  ?
+                  <li className='nav-item'><Link to={'/ListAdmin'} className="nav-link">ListAdmin</Link></li>
+                  :
+                  null
+                }
+                 {
+                  localStorage.login == 'true'
+                  ?
+                  <li className='nav-item'><Link to={'/Add-Records'} className="nav-link">AddRecords</Link></li>
+                  :
+                  null
+                }
+                {
+                  localStorage.login == 'true'
+                  ?
+                  <li className='nav-item'><Link to={'/recordPage'} className="nav-link">recordPage</Link></li>
+                  :
+                  null
+                }
+
+
+                
+                  
              </ul>
               </div>
           </nav>
@@ -67,6 +101,13 @@ function App() {
           <Route path="/record-change" component={Record_Change}/>
           <Route path="/signup" component={Signupadmin}/>
           <Route path="/error" component={Error}/>
+          <Route path="/records" component={ListRecords}/>
+          <Route path="/listadmin" component={ListAdmin}/>
+          <Route path="/about" component={About}/>
+          <Route path="/admin-options" component={admin_options}/>
+          <Route path="/Add-Records" component={AddRecords}/>
+          <Route path="/recordPage" component={recordPage}/>
+          
 
         </Switch>
       </div>

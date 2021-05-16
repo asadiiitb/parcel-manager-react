@@ -17,7 +17,7 @@ class First extends Component {
         }    
         SearchHandler= (event) => {
             this.setState({searchKey: event.target.value});
-            sessionStorage.setItem("track","999");
+            // sessionStorage.setItem("track","999");
         }
         handleClick= (event) =>{
             event.preventDefault();
@@ -27,7 +27,7 @@ class First extends Component {
                 searchKey: this.state.searchKey
             }
             // https://github.com/asadiiitb/parcel-manager-react/tree/main/{abc}
-            axios.get('http://localhost:8095/record/'+track)
+            axios.get('http://localhost:8095/record?id=999')
                 .then(response =>{
                     console.log(response);
                     console.log(response.data);
@@ -51,7 +51,7 @@ class First extends Component {
                     <div class="signin-image">
                         <figure><img src={sign_in} alt="sing up image"/></figure>
                         <a href="/signin" class="signup-image-link">Admin-Login</a>
-                    </div>
+                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Welcome To Parcel Manager </h2>
@@ -60,12 +60,20 @@ class First extends Component {
                                 <label for="searchKey"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="searchKey" id="searchKey" placeholder="Enter ID to check" value={this.state.searchKey} onChange={this.SearchHandler} />
                             </div>
-                            <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Find Parcel Details" onClick={this.SearchHandler}/>
-                            {/* FInd parcel details and got to '/record-view'  url with data */}
-                            </div>
+
+                          // {  <div class="form-group form-button">
+                          //       <input type="submit" name="searchKey" id="searchKey" class="form-submit" value="" onClick={this.SearchHandler}/>
+                          //   {/* FInd parcel details and got to '/record-view'  url with data }
+                          //   </div>*/}
+                          // <div class="form-group form-button">
+                          //       <input type="submit" name="searchKey" id="searchKey"  href="/recordPage" value="Find Parcel Details"/>
+                          //       <Link to="/recordPage" className="btn btn-primary">Record View</Link>
+                          //   </div>
+
+
+
                         </form>
-                        <div class="social-login">
+                        {/*<div class="social-login">
                             <span class="social-label">Or login with</span>
                             <ul class="socials">
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
@@ -73,6 +81,7 @@ class First extends Component {
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
                             </ul>
                         </div>
+                    */}
                     </div>
                 </div>
             </div>

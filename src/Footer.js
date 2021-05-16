@@ -19,13 +19,13 @@ return (
 	<Container>
 		<Row>
 		<Column>
-			<Heading href="#">About Us</Heading>
+			<Heading href="/about">About Us</Heading>
 		</Column>
 		<Column>
-			<Heading href="#">Services</Heading>
+			<Heading href="/about">Services</Heading>
 		</Column>
 		<Column>
-			<Heading href="#">Contact Us</Heading>
+			<Heading href="/about">Contact Us</Heading>
 		</Column>
 		</Row>
 	</Container>
