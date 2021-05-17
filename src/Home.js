@@ -71,10 +71,7 @@ class First extends Component {
                                 <input type="text" name="searchKey" id="searchKey" placeholder="Enter ID to check" value={this.state.searchKey} onChange={this.SearchHandler} />
                             </div>
 
-                             <div class="form-group form-button">
-                                 <input type="submit" name="searchKey" id="searchKey" class="form-submit" value="View Record" onClick={this.SearchHandler}/>
-                           
-                             </div>
+                             
 
 
                            <div class="form-group form-button">

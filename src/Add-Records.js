@@ -49,7 +49,7 @@ class AddRecords extends Component{
             .then(response =>{
                 console.log(response);
                 console.log(response.data);
-                {this.props.history.push('/record-view'); {/* Add URL to record View*/}
+                {this.props.history.push('/records'); {/* Add URL to record View*/}
                     console.log("Record Added");
                 }
                 alert('Record Added');
