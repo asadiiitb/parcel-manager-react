@@ -32,7 +32,7 @@ class AdminService extends Component{
         .then((response)=>{
             console.log(response)
         }).catch(err=>console.log(err))
-        /*return axios.get(Admin_API.concat("/record"),{v})*/
+        return axios.get(Admin_API.concat("/record"),{trackId})
     }
 }
 export default new AdminService();
